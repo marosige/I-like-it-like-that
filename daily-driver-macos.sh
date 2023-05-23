@@ -157,6 +157,7 @@ then
     install_software
     apply_settings
     open_websites
+    neofetch
     echo "Your mac is now configured!"
     echo "There are open tabs in your Chrome browser where you can get additional features without cli!"
 else
