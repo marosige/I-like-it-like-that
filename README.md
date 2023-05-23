@@ -36,7 +36,7 @@ To install all the stuff I use and set my setting preferences simply paste this 
 
 To install all the stuff I use and set my setting preferences simply paste this line into the terminal:
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/marosige/I-like-it-like-that/main/media-server-ubuntu.sh)"
+    curl -s https://raw.githubusercontent.com/marosige/I-like-it-like-that/dev/media-server/media-server-ubuntu.sh | sudo bash
 
 **Gaming PC - ChimeraOS**
 
