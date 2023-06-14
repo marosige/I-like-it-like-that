@@ -8,17 +8,17 @@ check_superuser() {
 }
 
 install_software() {
-  sudo apt install fish
+  sudo apt install fish -y
 
-  sudo apt install mc
+  sudo apt install mc -y
 
-  sudo apt install neofetch
+  sudo apt install neofetch -y
 
   curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash
 
   sudo apt-get install curl
   curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-  sudo apt-get install speedtest
+  sudo apt-get install speedtest -y
 }
 
 close_lid_do_nothing() {
