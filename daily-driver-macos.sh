@@ -11,12 +11,12 @@ function is_command_exists () {
 
 function check_and_install_dependency() {
   local apps=""
-  if ! is_command_exists brew ; then message+="• homebrew\n" ; fi
-  if ! is_command_exists dialog ; then message+="• dialog\n" ; fi
-  if ! is_command_exists mas ; then message+="• mac app store CLI\n" ; fi
+  if ! is_command_exists brew ; then apps+="• homebrew\n" ; fi
+  if ! is_command_exists dialog ; then apps+="• dialog\n" ; fi
+  if ! is_command_exists mas ; then apps+="• mac app store CLI\n" ; fi
   if [ -z "$apps" ]; then return ; fi
 
-  echo "In ordert to work, this script will install:\n$apps"
+  echo -e "In ordert to work, this script will install:\n$apps"
   read -p "Do you want to continue? [Y/n] " response
   if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
     if ! is_command_exists brew ; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ; fi
