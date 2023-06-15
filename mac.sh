@@ -29,10 +29,48 @@ function check_and_install_dependency() {
 }
 
 function menu_install() {
-  local choises=$(dialog --title "Install apps" --checklist "Select the app to install" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
-    # Security
-    "1Password" "1Password" ON \
-    # Developer Tools
+  install() {
+    case "$1" in
+      1password) brew install --cask 1password ;;
+      fish) brew install fish ;;
+      git) brew install  git ;;
+      gitkraken) brew install --cask gitkraken ;;
+      github) brew install --cask github ;;
+      atom) brew install --cask atom ;;
+      android-studio) brew install --cask android-studio ;;
+      apktool) brew install apktool ;;
+      charles) brew install --cask charles ;;
+      nordlayer) brew install --cask nordlayer ;;
+      nordvpn) brew install --cask nordvpn ;;
+      tunnelblick) brew install --cask tunnelblick ;;
+      messenger) brew install --cask messenger ;;
+      whatsapp) brew install --cask whatsapp ;;
+      slack) brew install --cask slack ;;
+      discord) brew install --cask discord ;;
+      zoom) brew install --cask zoom ;;
+      skype) brew install --cask skype ;;
+      mc) brew install mc ;;
+      the-unarchiver) brew install --cask the-unarchiver ;;
+      android-file-transfer) brew install --cask android-file-transfer ;;
+      google-chrome) brew install --cask google-chrome ;;
+      spotify) brew install --cask spotify ;;
+      vlc) brew install --cask vlc ;;
+      gimp) brew install --cask gimp ;;
+      audacity) brew install --cask audacity ;;
+      408981434) mas install 408981434 ;; # iMovie
+      appcleaner) brew install --cask appcleaner ;;
+      balenaetcher) brew install --cask balenaetcher ;;
+      sweet-home3d) brew install --cask sweet-home3d ;;
+      441258766) mas install 441258766 ;; # Magnet
+      937984704) mas install 937984704 ;; # Amphetamine
+      neofetch) brew install --cask neofetch ;;
+    esac
+  }
+
+  security=(
+    "1Password" "1Password" ON
+    )
+  developerTools=(
     "fish" "fish" ON \
     "git" "Git" ON \
     "gitkraken" "GitKraken" ON \
@@ -43,78 +81,45 @@ function menu_install() {
     "charles" "Charles Proxy" ON \
     "nordlayer" "NordLayer" ON \
     "nordvpn" "NordVPN" ON \
-    "tunnelblick" "Tunnelblick" ON \
-    # Messaging
+    "tunnelblick" "Tunnelblick" ON
+    )
+  messaging=(
     "messenger" "Facebook Messenger" ON \
     "messenger" "WhatsApp" ON \
     "slack" "Slack" ON \
     "discord" "Discord" ON \
     "zoom" "Zoom" ON \
-    "skype" "Skype" ON \
-    # File Management
+    "skype" "Skype" ON
+  )
+  fileManagement=(
     "mc" "mc" ON \
     "the-unarchiver" "The Unarchiver" ON \
-    "android-file-transfer" "Android File Transfer" ON \
-    # Web Browser
-    "google-chrome" "Google Chrome" ON \
-    # Media
+    "android-file-transfer" "Android File Transfer" ON
+  )
+  webBrowser=(
+    "google-chrome" "Google Chrome" ON
+  )
+  media=(
     "spotify" "Spotify" ON \
     "vlc" "VLC" ON \
     "gimp" "GIMP" ON \
     "audacity" "Audacity" ON \
-    "408981434" "iMovie" ON \
-    # Utilities
+    "408981434" "iMovie" ON
+  )
+  utilities=(
     "appcleaner" "AppCleaner" ON \
     "balenaetcher" "balenaEtcher" ON \
     "sweet-home3d" "Sweet Home 3D" ON \
     "logi-options-plus" "Logi Options+" ON \
     "441258766" "Magnet" ON \
     "937984704" "Amphetamine" ON \
-    "neofetch" "neofetch" ON 3>&1 1>&2 2>&3)
+    "neofetch" "neofetch" ON
+  )
+  apps=( "${security[@]}" "${developerTools[@]}" "${messaging[@]}" "${fileManagement[@]}" "${webBrowser[@]}" "${media[@]}" "${utilities[@]}" )
+  local choises=$(dialog --title "Install apps" --checklist "Select the app to install" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT "${apps[@]}" 3>&1 1>&2 2>&3)
     if [ -n "$choises" ]; then
       for choice in $choises; do
-        case "$choice" in
-          # Security
-          1password) brew install --cask 1password ;;
-          # Developer Tools
-          fish) brew install fish ;;
-          git) brew install  git ;;
-          gitkraken) brew install --cask gitkraken ;;
-          github) brew install --cask github ;;
-          atom) brew install --cask atom ;;
-          android-studio) brew install --cask android-studio ;;
-          apktool) brew install apktool ;;
-          charles) brew install --cask charles ;;
-          nordlayer) brew install --cask nordlayer ;;
-          nordvpn) brew install --cask nordvpn ;;
-          tunnelblick) brew install --cask tunnelblick ;;
-          # Messaging
-          messenger) brew install --cask messenger ;;
-          whatsapp) brew install --cask whatsapp ;;
-          slack) brew install --cask slack ;;
-          discord) brew install --cask discord ;;
-          zoom) brew install --cask zoom ;;
-          skype) brew install --cask skype ;;
-          # File Management
-          mc) brew install mc ;;
-          the-unarchiver) brew install --cask the-unarchiver ;;
-          android-file-transfer) brew install --cask android-file-transfer ;;
-          # Web Browser
-          google-chrome) brew install --cask google-chrome ;;
-          # Media
-          spotify) brew install --cask spotify ;;
-          vlc) brew install --cask vlc ;;
-          gimp) brew install --cask gimp ;;
-          audacity) brew install --cask audacity ;;
-          408981434) mas install 408981434 ;; # iMovie
-          # Utilities
-          appcleaner) brew install --cask appcleaner ;;
-          balenaetcher) brew install --cask balenaetcher ;;
-          sweet-home3d) brew install --cask sweet-home3d ;;
-          441258766) mas install 441258766 ;; # Magnet
-          937984704) mas install 937984704 ;; # Amphetamine
-          neofetch) brew install --cask neofetch ;;
-        esac
+        install $choice
       done
       dialog --title "Install apps" --msgbox "App(s) installed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
     fi
