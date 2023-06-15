@@ -24,7 +24,7 @@ function check_and_install_dependency() {
     if ! is_command_exists mas ; then brew install mas ; fi
   else
       echo "Installation cancelled, exiting..."
-      exit 1
+      exit
   fi
 }
 
@@ -54,7 +54,7 @@ function menu_install() {
     # File Management
     "mc" "mc" ON \
     "the-unarchiver" "The Unarchiver" ON \
-    "android-file-transfer" "Android File Transfer" ON
+    "android-file-transfer" "Android File Transfer" ON \
     # Web Browser
     "google-chrome" "Google Chrome" ON \
     # Media
@@ -71,10 +71,7 @@ function menu_install() {
     "441258766" "Magnet" ON \
     "937984704" "Amphetamine" ON \
     "neofetch" "neofetch" ON 3>&1 1>&2 2>&3)
-    if [ -z "$choises" ]; then
-      dialog --title "Install apps" --msgbox "Nothing installed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
-      menu_main
-    else
+    if [ -n "$choises" ]; then
       for choice in $choises; do
         case "$choice" in
           # Security
@@ -120,8 +117,8 @@ function menu_install() {
         esac
       done
       dialog --title "Install apps" --msgbox "App(s) installed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
-      menu_main
     fi
+    menu_main
 }
 
 function menu_download() {
@@ -131,14 +128,14 @@ function menu_download() {
 
   local selected=$(dialog --title "Manual app downloads" --menu "Select the app to open download page (requires chrome)" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
     "1password" "1Password chrome plugin" \
-    "meet" "Google Meet Progressive Web App" \
+    "meet" "Google Meet progressive web app" \
     "filezilla" "FileZilla application" \
     "back" "Back to main menu" 3>&1 1>&2 2>&3)
   case $selected in
     1password) chrome_open "https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa" ; menu_download ;;
     meet) chrome_open "https://support.google.com/meet/answer/10708569?hl=en" ; menu_download ;;
     filezilla) chrome_open "https://filezilla-project.org/download.php?platform=osx" ; menu_download ;;
-    back) menu_main ;;
+    back|"") menu_main ;;
   esac
 }
 
@@ -146,7 +143,7 @@ function menu_download() {
 #   https://macos-defaults.com/
 function menu_preferences() {
   configure_dock() {
-    local choises=$(whiptail --title "Configure dock" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
+    local choises=$(dialog --title "Configure dock" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
       "1" "Set dock icon standard size to 32px" ON \
       "2" "Set dock icon magnified size 48px" ON \
       "3" "Set the minimize animation effect to scale" ON \
@@ -166,18 +163,18 @@ function menu_preferences() {
           7) defaults write com.apple.dock autohide -bool "false" ;;
         esac
       done
-      # Reset the dock, so the changes will take effect
+      # Reset dock, so the changes will take effect
       killall Dock
     fi
   }
 
   configure_finder() {
-    local choises=$(whiptail --title "Configure finder" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
+    local choises=$(dialog --title "Configure finder" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
       "1" "Set show file extensions" ON \
       "2" "Set show hidden files" ON \
       "3" "Set default view style to column view" ON \
       "4" "Set keep folders on top (default)" ON \
-      "5" "Set changing file extension warning (default)" \
+      "5" "Set changing file extension warning (default)" ON \
       "6" "Set sidebar icon size to 2 (default)" ON 3>&1 1>&2 2>&3)
     if [ -n "$choises" ]; then
       for choice in $choises; do
@@ -195,16 +192,13 @@ function menu_preferences() {
     fi
   }
 
-  local choises=$(whiptail --title "Preferences" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
+  local choises=$(dialog --title "Preferences" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
     "fish" "Set fish as the default shell" ON \
     "mouse" "Set tracking speed to max" ON \
     "repeat" "Set repeat character while key held down" ON \
     "dock" "Configure dock to my likings" ON \
     "finder" "Configure finder to my likings" ON 3>&1 1>&2 2>&3)
-  if [ -z "$choises" ]; then
-    dialog --title "Preferences" --msgbox "Nothing changed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
-    menu_main
-  else
+  if [ -n "$choises" ]; then
     for choice in $choises; do
       case "$choice" in
         fish) chsh -s $(which fish) ;;
@@ -215,8 +209,8 @@ function menu_preferences() {
       esac
     done
     dialog --title "Preferences" --msgbox "Preference(s) changed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
-    menu_main
   fi
+  menu_main
 }
 
 function menu_main() {
@@ -229,7 +223,7 @@ function menu_main() {
     install) menu_install ;;
     download) menu_download ;;
     preferences) menu_preferences ;;
-    exit) clear ; exit 1 ;;
+    exit|"") clear ; exit ;;
   esac
 }
 
