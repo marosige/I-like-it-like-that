@@ -64,12 +64,13 @@ function menu_install() {
       441258766) mas install 441258766 ;; # Magnet
       937984704) mas install 937984704 ;; # Amphetamine
       neofetch) brew install --cask neofetch ;;
+      ffmpeg) brew install ffmpeg ;;
     esac
   }
 
   security=(
     "1Password" "1Password" ON
-    )
+  )
   developerTools=(
     "fish" "fish" ON \
     "git" "Git" ON \
@@ -82,7 +83,7 @@ function menu_install() {
     "nordlayer" "NordLayer" ON \
     "nordvpn" "NordVPN" ON \
     "tunnelblick" "Tunnelblick" ON
-    )
+  )
   messaging=(
     "messenger" "Facebook Messenger" ON \
     "messenger" "WhatsApp" ON \
@@ -92,7 +93,7 @@ function menu_install() {
     "skype" "Skype" ON
   )
   fileManagement=(
-    "mc" "mc" ON \
+    "mc" "Midnight Commander" ON \
     "the-unarchiver" "The Unarchiver" ON \
     "android-file-transfer" "Android File Transfer" ON
   )
@@ -103,6 +104,7 @@ function menu_install() {
     "spotify" "Spotify" ON \
     "vlc" "VLC" ON \
     "gimp" "GIMP" ON \
+    "ffmpeg" "FFmpeg" ON \
     "audacity" "Audacity" ON \
     "408981434" "iMovie" ON
   )
@@ -117,13 +119,13 @@ function menu_install() {
   )
   apps=( "${security[@]}" "${developerTools[@]}" "${messaging[@]}" "${fileManagement[@]}" "${webBrowser[@]}" "${media[@]}" "${utilities[@]}" )
   local choises=$(dialog --title "Install apps" --checklist "Select the app to install" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT "${apps[@]}" 3>&1 1>&2 2>&3)
-    if [ -n "$choises" ]; then
-      for choice in $choises; do
-        install $choice
-      done
-      dialog --title "Install apps" --msgbox "App(s) installed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
-    fi
-    menu_main
+  if [ -n "$choises" ]; then
+    for choice in $choises; do
+      install $choice
+    done
+    dialog --title "Install apps" --msgbox "App(s) installed!" $DIALOG_HEIGHT_SMALL $DIALOG_WIDTH
+  fi
+  menu_main
 }
 
 function menu_download() {
@@ -150,7 +152,7 @@ function menu_preferences() {
   configure_dock() {
     local choises=$(dialog --title "Configure dock" --checklist "The selected preference changes will take effect\nmove: arrows | toggle: space | save: enter" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT \
       "1" "Set dock icon standard size to 32px" ON \
-      "2" "Set dock icon magnified size 48px" ON \
+      "2" "Set dock icon magnified size to 48px" ON \
       "3" "Set the minimize animation effect to scale" ON \
       "4" "Set do not display recent apps in the dock" ON \
       "5" "Set display pinned apps in the dock (default)" ON \
