@@ -65,6 +65,7 @@ function menu_install() {
       937984704) mas install 937984704 ;; # Amphetamine
       neofetch) brew install --cask neofetch ;;
       ffmpeg) brew install ffmpeg ;;
+      utm) brew install --cask utm ;;
     esac
   }
 
@@ -115,7 +116,8 @@ function menu_install() {
     "logi-options-plus" "Logi Options+" ON \
     "441258766" "Magnet" ON \
     "937984704" "Amphetamine" ON \
-    "neofetch" "neofetch" ON
+    "neofetch" "neofetch" ON \
+    "utm" "Virtual machines for Mac" OFF
   )
   apps=( "${security[@]}" "${developerTools[@]}" "${messaging[@]}" "${fileManagement[@]}" "${webBrowser[@]}" "${media[@]}" "${utilities[@]}" )
   local choises=$(dialog --title "Install apps" --checklist "Select the app to install" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT "${apps[@]}" 3>&1 1>&2 2>&3)
