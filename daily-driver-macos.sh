@@ -67,6 +67,7 @@ function menu_install() {
       ffmpeg) brew install ffmpeg ;;
       utm) brew install --cask utm ;;
       speedtest) brew install speedtest ;;
+      youtube-dl) brew install youtube-dl ;;
     esac
   }
 
@@ -107,6 +108,7 @@ function menu_install() {
     "vlc" "VLC" ON \
     "gimp" "GIMP" ON \
     "ffmpeg" "FFmpeg" ON \
+    "youtube-dl" "YouTube Download" ON \
     "audacity" "Audacity" ON \
     "408981434" "iMovie" ON
   )
