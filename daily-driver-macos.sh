@@ -87,7 +87,7 @@ function menu_install() {
   )
   messaging=(
     "messenger" "Facebook Messenger" ON \
-    "messenger" "WhatsApp" ON \
+    "whatsapp" "WhatsApp" ON \
     "slack" "Slack" ON \
     "discord" "Discord" ON \
     "zoom" "Zoom" ON \
