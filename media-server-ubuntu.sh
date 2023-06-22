@@ -47,6 +47,10 @@ apply_settings() {
   # configure firewall for transmision
   sudo ufw allow 9091,51413/tcp
 
+  # Mount harddrive
+  # sudo fdisk -l
+  sudo mount -t ntfs /dev/sdb1 /media
+
 }
 
 open_software() {
