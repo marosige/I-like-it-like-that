@@ -29,59 +29,27 @@ function check_and_install_dependency() {
 }
 
 function menu_install() {
-  install() {
-    case "$1" in
-      1password) brew install --cask 1password ;;
-      fish) brew install fish ;;
-      git) brew install  git ;;
-      gitkraken) brew install --cask gitkraken ;;
-      github) brew install --cask github ;;
-      atom) brew install --cask atom ;;
-      android-studio) brew install --cask android-studio ;;
-      apktool) brew install apktool ;;
-      charles) brew install --cask charles ;;
-      nordlayer) brew install --cask nordlayer ;;
-      nordvpn) brew install --cask nordvpn ;;
-      tunnelblick) brew install --cask tunnelblick ;;
-      messenger) brew install --cask messenger ;;
-      whatsapp) brew install --cask whatsapp ;;
-      slack) brew install --cask slack ;;
-      discord) brew install --cask discord ;;
-      zoom) brew install --cask zoom ;;
-      skype) brew install --cask skype ;;
-      mc) brew install mc ;;
-      the-unarchiver) brew install --cask the-unarchiver ;;
-      android-file-transfer) brew install --cask android-file-transfer ;;
-      google-chrome) brew install --cask google-chrome ;;
-      spotify) brew install --cask spotify ;;
-      vlc) brew install --cask vlc ;;
-      gimp) brew install --cask gimp ;;
-      audacity) brew install --cask audacity ;;
-      408981434) mas install 408981434 ;; # iMovie
-      appcleaner) brew install --cask appcleaner ;;
-      balenaetcher) brew install --cask balenaetcher ;;
-      sweet-home3d) brew install --cask sweet-home3d ;;
-      441258766) mas install 441258766 ;; # Magnet
-      937984704) mas install 937984704 ;; # Amphetamine
-      neofetch) brew install --cask neofetch ;;
-      ffmpeg) brew install ffmpeg ;;
-      utm) brew install --cask utm ;;
-      speedtest) brew install speedtest ;;
-      youtube-dl) brew install youtube-dl ;;
-    esac
+  function install() {
+    if [[ $1 =~ ^[0-9]+$ ]] ; then
+      # If name is only numbers its a mac app store app
+      mas install $1
+    else
+      # If name has letters its a homebrew app
+      brew install $1
+    fi
   }
 
   security=(
     "1Password" "1Password" ON
   )
   developerTools=(
-    "fish" "fish" ON \
     "git" "Git" ON \
     "gitkraken" "GitKraken" ON \
     "github" "GitHub" ON \
     "atom" "Atom" ON \
     "android-studio" "Android Studio" ON \
-    "apktool" "Apktool" ON \
+    "apktool" "Apktool" OFF \
+    "jadx" "Dex to Java decompiler" OFF \
     "charles" "Charles Proxy" ON \
     "nordlayer" "NordLayer" ON \
     "nordvpn" "NordVPN" ON \
@@ -96,7 +64,6 @@ function menu_install() {
     "skype" "Skype" ON
   )
   fileManagement=(
-    "mc" "Midnight Commander" ON \
     "the-unarchiver" "The Unarchiver" ON \
     "android-file-transfer" "Android File Transfer" ON
   )
@@ -107,8 +74,6 @@ function menu_install() {
     "spotify" "Spotify" ON \
     "vlc" "VLC" ON \
     "gimp" "GIMP" ON \
-    "ffmpeg" "FFmpeg" ON \
-    "youtube-dl" "YouTube Download" ON \
     "audacity" "Audacity" ON \
     "408981434" "iMovie" ON
   )
@@ -119,11 +84,20 @@ function menu_install() {
     "logi-options-plus" "Logi Options+" ON \
     "441258766" "Magnet" ON \
     "937984704" "Amphetamine" ON \
-    "neofetch" "neofetch" ON \
-    "utm" "Virtual machines for Mac" OFF \
-    "speedtest" "Speedtest by Ookla" ON
+    "utm" "Virtual machines for Mac" OFF
   )
-  apps=( "${security[@]}" "${developerTools[@]}" "${messaging[@]}" "${fileManagement[@]}" "${webBrowser[@]}" "${media[@]}" "${utilities[@]}" )
+  cliTools=(
+    "fish" "fish" ON \
+    "tldr" "tldr pages" ON \
+    "mc" "Midnight Commander" ON \
+    "ffmpeg" "FFmpeg" ON \
+    "youtube-dl" "YouTube Download" ON \
+    "speedtest" "Speedtest by Ookla" ON \
+    "neofetch" "neofetch" ON \
+    "btop" "BTOP++" OFF \
+    "fzf" "Fuzzy Finder" OFF
+  )
+  apps=( "${security[@]}" "${developerTools[@]}" "${messaging[@]}" "${fileManagement[@]}" "${webBrowser[@]}" "${media[@]}" "${utilities[@]}" "${cliTools[@]}" )
   local choises=$(dialog --title "Install apps" --checklist "Select the app to install" $DIALOG_HEIGHT $DIALOG_WIDTH $MENU_LIST_HEIGHT "${apps[@]}" 3>&1 1>&2 2>&3)
   if [ -n "$choises" ]; then
     for choice in $choises; do
