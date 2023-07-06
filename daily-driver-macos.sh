@@ -189,7 +189,7 @@ function menu_preferences() {
     for choice in $choises; do
       case "$choice" in
         fish) chsh -s $(which fish) ;;
-        mouse) defaults write -g com.apple.trackpad.scaling -float 3.0 ;;
+        mouse) defaults write -g com.apple.trackpad.scaling -float 5.0 ;;
         repeat) defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false" ;;
         dock) configure_dock ;;
         finder) configure_finder ;;
