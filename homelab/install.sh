@@ -9,7 +9,6 @@ check_superuser() {
 
 install_software() {
   sudo apt install fish -y
-
   sudo apt install mc -y
 
   sudo apt install neofetch -y
@@ -20,6 +19,8 @@ install_software() {
   curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
   sudo apt-get install speedtest -y
   sudo apt install youtube-dl
+  sudo apt install network-manager # for nmtui wifi connect
+  sudo apt install nfs-common # for NFS nas mount - https://linuxhint.com/ubuntu_mounting_nfs/
 }
 
 close_lid_do_nothing() {
