@@ -5,29 +5,6 @@ readonly DIALOG_HEIGHT=25
 readonly DIALOG_HEIGHT_SMALL=10
 readonly MENU_LIST_HEIGHT=16
 
-function is_command_exists () {
-    type "$1" &> /dev/null
-}
-
-function check_and_install_dependency() {
-  local apps=""
-  if ! is_command_exists brew ; then apps+="• homebrew\n" ; fi
-  if ! is_command_exists dialog ; then apps+="• dialog\n" ; fi
-  if ! is_command_exists mas ; then apps+="• mac app store CLI\n" ; fi
-  if [ -z "$apps" ]; then return ; fi
-
-  echo -e "In ordert to work, this script will install:\n$apps"
-  read -p "Do you want to continue? [Y/n] " response
-  if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
-    if ! is_command_exists brew ; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ; fi
-    if ! is_command_exists dialog ; then brew install dialog ; fi
-    if ! is_command_exists mas ; then brew install mas ; fi
-  else
-      echo "Installation cancelled, exiting..."
-      exit
-  fi
-}
-
 function menu_install() {
   function install() {
     if [[ $1 =~ ^[0-9]+$ ]] ; then
@@ -214,5 +191,4 @@ function menu_main() {
   esac
 }
 
-check_and_install_dependency
 menu_main
