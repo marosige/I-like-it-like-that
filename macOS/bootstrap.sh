@@ -18,7 +18,7 @@ function is_command_exists () {
 clear
 
 echo "Welcome to Gergő's macOS daily driver setup!"
-echo "This script will install a bunch of applications an change a lot of settings."
+echo "This script will install a bunch of applications and change a lot of settings."
 echo "It is an irreversible process, use at your own risk!"
 read -p "Do you want to continue? [Y/n] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
@@ -31,7 +31,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
   echo "Sparse cloning the macOS part of the repository..."
   mkdir -p ~/.dotfiles
   cd ~/.dotfiles
-  git init
+  git init --initial-branch=main
   git remote add origin https://github.com/marosige/I-like-it-like-that
   git sparse-checkout init
   git sparse-checkout set "macOS/" "dotfiles/"
@@ -39,7 +39,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
   git pull
 
   echo "Starting the install script..."
-  source ~/.dodotfiles/macOS/install.sh
+  source ~/.dotfiles/macOS/install.sh
 
 else
     echo "Installation cancelled, exiting..."
