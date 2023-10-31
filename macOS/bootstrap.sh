@@ -29,14 +29,10 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
   if ! is_command_exists gum ; then brew install gum ; fi
 
   echo "Sparse cloning the macOS part of the repository..."
-  mkdir -p ~/.dotfiles
-  cd ~/.dotfiles
-  git init --initial-branch=main
-  git remote add origin https://github.com/marosige/I-like-it-like-that
-  git sparse-checkout init
-  git sparse-checkout set "macOS/" "dotfiles/"
-  git checkout main
-  git pull
+  git clone --no-checkout https://github.com/marosige/I-like-it-like-that ~/.dotfiles
+  git -C ~/.dotfiles sparse-checkout init --cone
+  git -C ~/.dotfiles sparse-checkout set macOS/ dotfiles/
+  git -C ~/.dotfiles checkout main
 
   echo "Starting the install script..."
   source ~/.dotfiles/macOS/install.sh
