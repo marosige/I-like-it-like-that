@@ -21,6 +21,7 @@ install_software() {
   sudo apt install youtube-dl
   sudo apt install network-manager # for nmtui wifi connect
   sudo apt install nfs-common # for NFS nas mount - https://linuxhint.com/ubuntu_mounting_nfs/
+  sudo apt install mkvtoolnix # Matroska media files manipulation tools
 }
 
 close_lid_do_nothing() {
