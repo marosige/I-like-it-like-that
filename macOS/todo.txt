@@ -1,0 +1,3 @@
+Check all system settings if I miss anything
+install dotfiles
+install the fish scripts and bins to the command line

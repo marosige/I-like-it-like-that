@@ -15,8 +15,12 @@ brew update
 # Upgrade existing packages
 brew upgrade
 
+# Link homebrew/Brewfile to ~/Brewfile
+BREWFILE=$(dirname "$0")"/homebrew/Brewfile"
+ln -s $BREWFILE ~/Brewfile
+
 # Install CLI tools & GUI applications
-brew bundle --file=installers/homebrew/Brewfile
+brew bundle
 
 # Remove outdated versions from the cellar including casks
 brew cleanup && brew prune
