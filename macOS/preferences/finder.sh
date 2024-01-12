@@ -34,7 +34,7 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 # Previous Scope : `SCsp`
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Writing of .DS_Store files on network or USB volumes
+# Avoid writing of .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 

@@ -16,9 +16,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo softwareupdate -ia --verbose
 
 INSTALLERS=(
-  directory_structure # directory_structure __must__ be first
+  directory-structure # directory_structure __must__ be first
   homebrew # Homebrew __must__ be installed before other tools
-  chrome_apps
+  chrome-apps
 )
 
 # Sources all the preference files

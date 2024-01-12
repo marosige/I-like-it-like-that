@@ -8,5 +8,8 @@
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/marosige/I-like-it-like-that/main/macOS/bootstrap.sh)"
 
-## References
+## Sources
+https://macos-defaults.com/
 https://github.com/joeyhoer/starter
+https://github.com/mathiasbynens/dotfiles
+https://github.com/andrew8088/dotfiles

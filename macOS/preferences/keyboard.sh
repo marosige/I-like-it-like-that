@@ -19,4 +19,6 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Install my keyboard layout
-sudo cp Ukelele/en_hu.keylayout /Library/Keyboard\ Layouts/
+sudo cp keyboard/en_hu.keylayout /Library/Keyboard\ Layouts/
+
+# Set my keyboard layout
