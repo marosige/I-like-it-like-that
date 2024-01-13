@@ -4,6 +4,12 @@
 # Directory Structure
 ###############################################################################
 
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Creating Directory Structure"
+
 mkdir ~/bin                     # For installed scripts
 mkdir ~/bin/ignition            # For this sript :)
 mkdir ~/roms                    # For video game roms

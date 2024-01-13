@@ -1,3 +1,4 @@
 Check all system settings if I miss anything
-add dotfiles
 install the fish scripts and bins to the command line
+automatically opened applications set
+android studio settings

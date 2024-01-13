@@ -17,6 +17,7 @@ sudo softwareupdate -ia --verbose
 
 INSTALLERS=(
   directory-structure # directory_structure __must__ be first
+  dotfiles # Dotfiles __must__ be installed before Homebrew
   homebrew # Homebrew __must__ be installed before other tools
   chrome-apps
 )

@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Shells
+# Shell
 ###############################################################################
+
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Setting Shell Preferences"
 
 # Add fish into shells if missing. (Homebrew bug)
 if ! grep -wq "/usr/local/bin/fish" /etc/shells; then

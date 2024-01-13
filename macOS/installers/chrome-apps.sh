@@ -1,6 +1,12 @@
 #!/bin/sh
 # This script will open chrome apps to install
 
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Opening Chrome Apps"
+
 chrome_open() {
   /usr/bin/open -a "/Applications/Google Chrome.app" $1
 }

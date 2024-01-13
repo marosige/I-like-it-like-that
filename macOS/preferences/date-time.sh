@@ -4,6 +4,12 @@
 # Date & Time
 ###############################################################################
 
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Setting Date & Time Preferences"
+
 # Set the timezone (see `systemsetup -listtimezones` for other values)
 sudo systemsetup -settimezone "Europe/Budapest" > /dev/null
 

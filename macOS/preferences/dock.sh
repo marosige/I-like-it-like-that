@@ -4,6 +4,12 @@
 # Dock
 ###############################################################################
 
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Setting Dock Preferences"
+
 ## Dock preferences
 
 # Set dock icon standard size to 32px

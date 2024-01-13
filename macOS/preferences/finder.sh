@@ -4,6 +4,12 @@
 # Finder
 ###############################################################################
 
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+info "Setting Finder Preferences"
+
 # Set show file extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
