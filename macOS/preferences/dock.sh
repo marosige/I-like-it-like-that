@@ -4,6 +4,8 @@
 # Dock
 ###############################################################################
 
+## Dock preferences
+
 # Set dock icon standard size to 32px
 defaults write com.apple.dock tilesize -int 32
 
@@ -33,6 +35,40 @@ defaults write com.apple.dock static-only -bool false
 
 # Set disable dock auto hide (default)
 defaults write com.apple.dock autohide -bool false
+
+## Dock items
+
+# Clear the dock
+dockutil --remove all --no-restart
+
+# Add persistent-apps
+dockutil --add '' --type small-spacer --section apps --no-restart
+dockutil --add '/Applications/Google Chrome.app' --no-restart
+dockutil --add '/Applications/Spotify.app' --no-restart
+dockutil --add '' --type small-spacer --section apps --no-restart
+dockutil --add '/Applications/Messenger.app' --no-restart
+dockutil --add '/System/Applications/Messages.app' --no-restart
+dockutil --add '/Applications/WhatsApp.app' --no-restart
+dockutil --add '' --type small-spacer --section apps --no-restart
+dockutil --add '/System/Applications/Calendar.app' --no-restart
+dockutil --add '/System/Applications/Reminders.app' --no-restart
+dockutil --add '/System/Applications/Notes.app' --no-restart
+dockutil --add '/Applications/1Password.app' --no-restart
+dockutil --add '/System/Applications/Utilities/Screenshot.app' --no-restart
+dockutil --add '' --type small-spacer --section apps --no-restart
+dockutil --add '/Applications/Slack.app' --no-restart
+dockutil --add '/Users/'$(id -un)'/Applications/Chrome Apps.localized/Google Meet.app/' --no-restart
+dockutil --add '' --type small-spacer --section apps --no-restart
+dockutil --add '/Applications/kitty.app' --no-restart
+dockutil --add '/Applications/GitKraken.app' --no-restart
+dockutil --add '/Applications/Atom.app' --no-restart
+dockutil --add '/Applications/Android Studio.app' --no-restart
+dockutil --add '/Applications/Charles.app' --no-restart
+dockutil --add '/System/Applications/QuickTime Player.app' --no-restart
+dockutil --add '' --type small-spacer --section apps --no-restart
+
+# Add persistent-others
+dockutil --add '~/Downloads' --view fan --display stack --sort dateadded --no-restart
 
 # Restart dock to apply changes
 killall Dock

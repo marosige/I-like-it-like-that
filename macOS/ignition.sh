@@ -2,4 +2,4 @@
 
 #./install.sh
 #./preferences.sh
-./todo.sh
+bash todo.sh
