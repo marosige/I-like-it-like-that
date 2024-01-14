@@ -12,7 +12,7 @@ info "Installing Homebrew Applications"
 
 # Install Homebrew if not installed - brew.sh
 if ! hash brew 2>/dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we are using the latest Homebrew

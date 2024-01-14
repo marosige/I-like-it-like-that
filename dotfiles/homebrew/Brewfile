@@ -12,7 +12,8 @@ cask "gdisk"      # Disk partitioning tool
 brew "imagemagick"# Tools and libraries to manipulate images in many formats
 brew "ffmpeg"     # Play, record, convert, and stream audio and video
 brew "youtube-dl" # Download YouTube videos from the command-line
-brew "speedtest"  # Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli" # Command-line interface for https://speedtest.net bandwidth tests
+brew "dockutil"
 brew "gum"        # Tool for glamorous shell scripts
 brew "dialog"     # Display user-friendly message boxes from shell scripts
 brew "btop"       # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -31,7 +32,7 @@ brew "lorem"      # Lorem ipsum generator for the console
 # Android development
 cask "android-studio" # Tools for building Android applications
 brew "scrcpy"     # Display and control your Android device
-cask "jadx"       # Dex to Java decompiler
+brew "jadx"       # Dex to Java decompiler
 
 # OTT development
 cask "handbrake"  # Open-source video transcoder
@@ -52,7 +53,7 @@ cask "the-unarchiver" # Unpacks archive files
 cask "google-chrome"  # Web browser
 
 # Security
-brew "1Password"  # Password manager that keeps all passwords secure behind one password
+cask "1Password"  # Password manager that keeps all passwords secure behind one password
 
 # Productivity
 cask "ticktick"   # To-do & task list manager
