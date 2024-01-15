@@ -1,4 +1,18 @@
+set_fish_shell alapjan visszajelzes - https://github.com/edheltzel/dotfiles/blob/master/fish/setup.sh
 Check all system settings if I miss anything
-install the fish scripts and bins to the command line
 automatically opened applications set
 android studio settings
+finder jobb oldali pinnelt folderek
+akku % visszajelző
+
+terminal
+terminal infulo meret legyen akkora mint a kitty
+fish -
+  one dark szineket hasznalni
+  beallitani a szineket hogy ugy legyen hasznalva mint a kitty theme-ben https://github.com/edheltzel/dotfiles/blob/master/fish/conf.d/colors.fish
+  functions legyen nekem is
+    amiket osszeszedtem eddig
+    weather
+  beallitani egyeb aliases-t (bin folderre)
+mc -
+  A nem 16M szinek hasznalata
