@@ -65,7 +65,7 @@ dockutil --add '' --type small-spacer --section apps --no-restart
 dockutil --add '/Applications/Slack.app' --no-restart
 dockutil --add '/Users/'$(id -un)'/Applications/Chrome Apps.localized/Google Meet.app/' --no-restart
 dockutil --add '' --type small-spacer --section apps --no-restart
-dockutil --add '/Applications/kitty.app' --no-restart
+dockutil --add '/System/Applications/Utilities/Terminal.app' --no-restart
 dockutil --add '/Applications/GitKraken.app' --no-restart
 dockutil --add '/Applications/Atom.app' --no-restart
 dockutil --add '/Applications/Android Studio.app' --no-restart

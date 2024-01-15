@@ -5,14 +5,25 @@ android studio settings
 finder jobb oldali pinnelt folderek
 akku % visszajelző
 
-terminal
-terminal infulo meret legyen akkora mint a kitty
+Not important todo:
+
 fish -
-  one dark szineket hasznalni
   beallitani a szineket hogy ugy legyen hasznalva mint a kitty theme-ben https://github.com/edheltzel/dotfiles/blob/master/fish/conf.d/colors.fish
   functions legyen nekem is
     amiket osszeszedtem eddig
-    weather
-  beallitani egyeb aliases-t (bin folderre)
-mc -
-  A nem 16M szinek hasznalata
+      beallitani egyeb aliases-t (bin folderre)
+
+terminal -
+  Terminal Default window size set columns: 197 lines: 60
+    defaults read com.apple.terminal "Window Settings"
+      "Window Settings" =     {
+          Basic =         {
+              Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+              FontAntialias = 1;
+              FontWidthSpacing = "1.004032258064516";
+              ProfileCurrentVersion = "2.07";
+              columnCount = 197;
+              name = Basic;
+              rowCount = 60;
+              type = "Window Settings";
+          };
