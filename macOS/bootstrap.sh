@@ -6,6 +6,8 @@
 # * sparse checkout the macOS part of this repository into ~/bin/ignition
 # * run install.sh from this repo
 
+source <(curl -s https://raw.githubusercontent.com/marosige/I-like-it-like-that/main/macOS/print.sh)
+
 function is_command_exists () {
     type "$1" &> /dev/null
 }
