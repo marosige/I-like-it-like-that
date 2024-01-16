@@ -5,6 +5,10 @@ android studio settings
 finder jobb oldali pinnelt folderek
 akku % visszajelző
 
+turn off click on display to show it
+set screen mirroring visible always on menu bar
+set display resolution to more space
+
 Not important todo:
 
 fish -
