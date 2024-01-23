@@ -23,4 +23,4 @@ end
 thefuck --alias | source
 
 # Add my bin folder to the PATH
-set PATH ~/bin/ignition/macOS/bin $PATH
+set PATH ~/.ignition/macOS/bin $PATH
