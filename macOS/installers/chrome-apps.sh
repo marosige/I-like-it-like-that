@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script will open chrome apps to install
 
 info () {

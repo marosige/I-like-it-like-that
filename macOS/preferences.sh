@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+source ./print.sh
 
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then
@@ -19,5 +21,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Run all the preferences files
 
 for f in preferences/*.sh; do
-  bash "$f"
+  file_name=$(basename $f .sh)
+  name=${file_name//-/ }  # replace '-' with ' '
+  message="Setting $name preferences"
+  task $message
+  #sleep 3 && success $message || fail $message;
+  bash "$f" && success $message || fail $message;
 done

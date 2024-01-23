@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Mission Control
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Mission Control Preferences"
 
 # Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false

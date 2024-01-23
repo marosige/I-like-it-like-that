@@ -1,12 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# Android Studio
+# ls -all
 ###############################################################################
 
-# TODO avdmanager, sdkmanager
-
-# Add adb to shell
-set PATH ~/Library/Android/sdk/platform-tools $PATH
-
-set PATH ~/bin/ignition/macOS/bin $PATH
+ls -all

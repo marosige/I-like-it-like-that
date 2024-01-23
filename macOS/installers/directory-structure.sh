@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Directory Structure
@@ -11,7 +11,6 @@ info () {
 info "Creating Directory Structure"
 
 mkdir ~/bin                     # For installed scripts
-mkdir ~/bin/ignition            # For this sript :)
 mkdir ~/roms                    # For video game roms
 mkdir ~/tmp                     # For temporarly files, clear this directory upon start up
 mkdir ~/workspace               # For my git repos

@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Dock
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Dock Preferences"
 
 ## Dock preferences
 
@@ -47,6 +41,9 @@ defaults write com.apple.dock autohide -bool false
 # Clear the dock
 dockutil --remove all --no-restart
 
+# Sleep 1 second, because quickly calling dockutil can cause issues
+sleep 1
+
 # Add persistent-apps
 dockutil --add '' --type small-spacer --section apps --no-restart
 dockutil --add '/Applications/Google Chrome.app' --no-restart
@@ -75,6 +72,9 @@ dockutil --add '' --type small-spacer --section apps --no-restart
 
 # Add persistent-others
 dockutil --add '~/Downloads' --view fan --display stack --sort dateadded --no-restart
+
+# Sleep 1 second, because quickly calling dockutil can cause issues
+sleep 1
 
 # Restart dock to apply changes
 killall Dock

@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Displays
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Displays Preferences"
 
 # Automatically adjust brightness
 defaults write com.apple.BezelServices dAuto -bool true

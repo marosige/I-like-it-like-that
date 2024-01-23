@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Trackpad
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Trackpad Preferences"
 
 # Disable "natural" scrolling
 #defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false

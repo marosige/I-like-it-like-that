@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ###############################################################################
-# Android Studio
+# o with no arguments opens the current directory
+# otherwise opens the given location
 ###############################################################################
 
-# TODO avdmanager, sdkmanager
-
-# Add adb to shell
-set PATH ~/Library/Android/sdk/platform-tools $PATH
-
-set PATH ~/bin/ignition/macOS/bin $PATH
+if [ $# -eq 0 ]; then
+  open .
+else
+  open "$@"
+fi

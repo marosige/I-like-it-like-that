@@ -1,6 +1,7 @@
 # CLI
 brew "mas"        # Mac App Store command-line interface
 cask "kitty"      # GPU-based terminal emulator
+brew "bash"       # Update Bash from version 3.2 to 5.2+ as Apple won’t distribute newer versions due to licences concerns. - Bourne-Again SHell, a UNIX command interpreter
 brew "fish"       # User-friendly command-line shell for UNIX-like operating systems
 brew "mc"         # midnight-commander Terminal-based visual file manager
 brew "tldr"       # Simplified and community-driven man pages

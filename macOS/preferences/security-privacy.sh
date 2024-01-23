@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Security & Privacy
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Security & Privacy Preferences"
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -bool true

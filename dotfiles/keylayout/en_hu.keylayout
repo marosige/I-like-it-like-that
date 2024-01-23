@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 359 on 2024-01-11 at 16:54 (CET)-->
-<!--Last edited by Ukelele version 375 on 2024-01-11 at 17:02 (CET)-->
-<keyboard group="126" id="-13750" name="en_hu" maxout="1">
+<!--Last edited by Ukelele version 375 on 2024-01-16 at 11:09 (CET)-->
+<keyboard group="126" id="-13750" name="en_hu" maxout="9">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
         <layout first="18" last="18" mapSet="JIS" modifiers="Modifiers"/>
@@ -296,7 +296,7 @@
             <key code="41" output=""/>
             <key code="42" output=""/>
             <key code="43" output=""/>
-            <key code="44" output=""/>
+            <key code="44" output="¯\_(ツ)_/¯"/>
             <key code="45" output=""/>
             <key code="46" output=""/>
             <key code="47" output=""/>

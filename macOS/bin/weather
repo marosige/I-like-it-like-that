@@ -1,12 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# Android Studio
+# check the weather
 ###############################################################################
 
-# TODO avdmanager, sdkmanager
-
-# Add adb to shell
-set PATH ~/Library/Android/sdk/platform-tools $PATH
-
-set PATH ~/bin/ignition/macOS/bin $PATH
+curl wttr.in/~Budapest

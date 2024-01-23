@@ -1,13 +1,49 @@
+== MAI NAP ==
+
+bootstrap:
+  • folder=~/bin/ignition legyen inkabb egy nagy global variable.
+  • az alapjan fusson minden script, az alapjan hivatkozzanak egymasra
+    • kivetel a bootstrap ami ugye curl-el fut.
+  • curl es wget-es bootstrap a mainbe, ami valaszt mac vagy server config az, mint ahogy a zsh for a human csinalta vagy mi amit yotuubeon lattam.
+fish:
+  • kivenni a one dark themet, de kapcsolósan (shell vagy kitty theme legyen), hogy könnyen állítható legyen.
+mc:
+  • one dark vagy one dark 16 theme legyen? Meglesni kitty-vel
+kitty:
+  • ez legyen a default temrinal (dock-ban is)
+  • ezen legyen a onedark theme (kapcsolhatoan, hogy shell vagy kitty)
+keyboard:
+  • beallitani a talalt stackoverflow alapjan az en_hu-t
+  • lehet legyen inkabb en-hu a neve
+  • ne mutassuk a keyboard valasztot a menu dockban ha sikerul beallitani
+  • toroljuk az eredeti ABC-t (en-t)
+references.txt
+  • inkabb legyen readme.md es abba legyenek referenciak
+
+=============
+
+move chrome apps sh to a readme of what to do if ignition is ready
+
+=============
+
 set_fish_shell alapjan visszajelzes - https://github.com/edheltzel/dotfiles/blob/master/fish/setup.sh
 Check all system settings if I miss anything
 automatically opened applications set
 android studio settings
 finder jobb oldali pinnelt folderek
 akku % visszajelző
+slack theme - one dark
 
 turn off click on display to show it
 set screen mirroring visible always on menu bar
 set display resolution to more space
+
+set the same:
+  #!/bin/bash
+  #!/usr/bin/env zsh
+  #!/usr/bin/env fish
+  #!/bin/bash
+to every script.
 
 Not important todo:
 

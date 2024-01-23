@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Accessibility
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Accessibility Preferences"
 
 # Shake mouse cursor to locate
 defaults write CGDisableCursorLocationMagnification -bool true

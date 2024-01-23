@@ -1,14 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Siri
 ###############################################################################
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-info "Setting Siri Preferences"
 
 # Enable Siri
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false

@@ -1,5 +1,0 @@
-OneDark theme: https://github.com/DeadNews/mc-onedark/
-I made some modifications on the original onedark.ini theme.
-  directory: blue -> brightblue
-  device: brightmagenta -> magenta
-  archive: magenta -> brightmagenta

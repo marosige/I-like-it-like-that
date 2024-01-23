@@ -27,7 +27,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]] ; then
   if ! is_command_exists brew ; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" ; fi
   if ! is_command_exists git ; then brew install git ; fi
 
-  folder=~/bin/ignition
+  folder=~/.ignition
 
   echo "Sparse cloning the macOS part of the repository..."
   git clone --no-checkout https://github.com/marosige/I-like-it-like-that $folder

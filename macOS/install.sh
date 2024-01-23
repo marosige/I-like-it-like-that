@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then

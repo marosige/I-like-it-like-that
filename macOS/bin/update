@@ -1,5 +1,9 @@
 #!/bin/bash
 
+###############################################################################
+# Update everything (ignition, homebrew, mas and macOS)
+###############################################################################
+
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then
   echo "This script is only available for macOS! Exiting..."

@@ -1,1 +1,0 @@
-OneDark theme: https://github.com/rkbk60/onedark-fish/tree/master

@@ -1,14 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ###############################################################################
 # Desktop
 ###############################################################################
 
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
+## Window Manager
 
-info "Setting Desktop Preferences"
+# Click wallpaper to reveal desktop
+# Always: true
+# Only in Stage Manager: false
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
 ## Things on desktop
 
@@ -38,35 +39,35 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 
 ## Hot Corners
-# wvous-*-corner:
-# tl: top left
-# tr: top right
-# bl: top left
-# br: bottom right
+# Corner location in wvous-*-corner:
+# top left: tl
+# top right: tr
+# bottom left: bl
+# bottom right: br
 
-# Disable hot corners
-# 0: No Option
-# 2: Mission Control
-# 3: Show application windows
-# 4: Desktop
-# 5: Start screen saver
-# 6: Disable screen saver
-# 7: Dashboard
-# 10: Put display to sleep
-# 11: Launchpad
-# 12: Notification Center
-# 13: Lock Screen
+# Hot corner options
+# No Option: 0
+# Mission Control: 2
+# Show application windows: 3
+# Desktop: 4
+# Start screen saver: 5
+# Disable screen saver: 6
+# Dashboard: 7
+# Put display to sleep: 10
+# Launchpad: 11
+# Notification Center: 12
+# Lock Screen: 13
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-br-corner -int 0
 
-# Disable hot corner modifiers (to activate hot corner a key must be held)
-# 0: No Modifier
-# 131072: Shift Key
-# 262144: Control Key
-# 524288: Option Key
-# 1048576: Command Key
+# Modifiers to activate hot corner (key must be held)
+# No Modifier: 0
+# Shift Key: 131072
+# Control Key: 262144
+# Option Key: 524288
+# Command Key: 1048576
 defaults write com.apple.dock wvous-tl-modifier -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
