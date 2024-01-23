@@ -68,6 +68,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 ## Custom keyboard layout setup
 
+# Install my keyboard layout
+sudo ln -s /../../dotfiles/keylayout/en_hu.keylayout /Library/Keyboard\ Layouts/en_hu.keylayout
+
 # Delete the default layouts (US)
 defaults delete com.apple.HIToolbox AppleEnabledInputSources
 
