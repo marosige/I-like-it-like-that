@@ -149,7 +149,7 @@ create_env_file () {
     fi
 }
 
-install_dotfiles
+sudo install_dotfiles
 #create_env_file
 
 echo ''
