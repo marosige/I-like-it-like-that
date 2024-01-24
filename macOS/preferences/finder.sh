@@ -41,5 +41,18 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# New Finder windows now opens in /Users/<username>
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
+## Setup the sidebar
+user=$(id -un)
+mysides remove all
+mysides add "/" file:///
+mysides add "~" file:///Users/$user/
+mysides add workspace file:///Users/$user/workspace/
+mysides add Downloads file:///Users/$user/Downloads/
+mysides add Desktop file:///Users/$user/Desktop/
+mysides add Applications file:///Applications/
+
 # Restart finder to apply changes
 killall Finder

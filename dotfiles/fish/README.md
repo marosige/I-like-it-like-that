@@ -1,7 +1,7 @@
 ## Fish
 
 #### About
-I opt for the Fish shell due to its suggestions, smart tab completions, and syntax highlighting, but I use bash for scripting.  
+I opt for the Fish shell due to it's suggestions, smart tab completions, and syntax highlighting, but I use bash for scripting.  
 
 #### How I use it?
 * I write my scripts in bash and use the `#!/bin/bash` shebang line in my scripts.
@@ -10,7 +10,7 @@ I opt for the Fish shell due to its suggestions, smart tab completions, and synt
 * Instead of adding stuff the fish way, i put every persistance changes to the `config.fish` file. (Like adding to PATH)
 
 #### Modifications
-* I use the One Dark theme like weerywhere its possible.
+* I use the One Dark theme like everywhere it's possible.
 
 ![My fish shell](./fish.png)  
 

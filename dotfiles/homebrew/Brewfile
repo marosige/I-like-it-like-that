@@ -14,7 +14,8 @@ brew "imagemagick"# Tools and libraries to manipulate images in many formats
 brew "ffmpeg"     # Play, record, convert, and stream audio and video
 brew "youtube-dl" # Download YouTube videos from the command-line
 brew "speedtest-cli" # Command-line interface for https://speedtest.net bandwidth tests
-brew "dockutil"
+brew "dockutil"   # Tool for managing dock items
+cask "mysides"    # A simple CLI tool for Finder sidebar modification.
 brew "gum"        # Tool for glamorous shell scripts
 brew "dialog"     # Display user-friendly message boxes from shell scripts
 brew "btop"       # Resource monitor. C++ version and continuation of bashtop and bpytop
