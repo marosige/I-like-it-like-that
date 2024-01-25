@@ -21,12 +21,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 title "Setting my preferred system configuration:"
 
 # Get an empty log file
-log_file="ignition.log"
+log_file="ignition.preferences.log"
 rm "$log_file"
 
 error=false
 
-# Run all the preferences files
+# Run all the preferences scripts
 for script in preferences/*.sh; do
   # Get the name of the preference script
   full_name=$(basename $script)
@@ -41,6 +41,7 @@ for script in preferences/*.sh; do
 
   # Run the preference script, redirecting standard output and error
   # Change the task message to success or fail
+  # Add the sripts name to the log. Mark if it has errors
   if output=$(bash $script 2>&1); then
     success $message
     echo "$full_name" >> $log_file
@@ -52,12 +53,8 @@ for script in preferences/*.sh; do
 
   # Check if the he script is not empty before appending to the log file
   [ -n "$output" ] && echo "$output" >> "$log_file"
+  # Close every preferences script with an empty line in the log
   echo "" >> "$log_file"
-
-  # Add new line to log before the message if it contains an output.
-#  [ -n "$output" ] && echo "" >> "$log_file"
-
-
 done
 
 # Let the user know where to find the log if there was an error
