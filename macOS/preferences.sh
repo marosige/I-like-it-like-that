@@ -29,6 +29,7 @@ error=false
 # Run all the preferences files
 for script in preferences/*.sh; do
   # Get the name of the preference script
+  full_name=$(basename $script)
   file_name=$(basename $script .sh)
   name=${file_name//-/ }  # replace '-' with ' '
 
@@ -42,15 +43,20 @@ for script in preferences/*.sh; do
   # Change the task message to success or fail
   if output=$(bash $script 2>&1); then
     success $message
-    echo "$message:" >> $log_file
+    echo "$full_name" >> $log_file
   else
     error=true
     fail $message
-    echo "!! ERROR $message !!" >> $log_file
+    echo -e "!!!! ERROR  !!!!\n$full_name" >> $log_file
   fi
 
-  # Add the script output to the log
-  echo "$output" >> $log_file
+  # Check if the he script is not empty before appending to the log file
+  [ -n "$output" ] && echo "$output" >> "$log_file"
+  echo "" >> "$log_file"
+
+  # Add new line to log before the message if it contains an output.
+#  [ -n "$output" ] && echo "" >> "$log_file"
+
 
 done
 

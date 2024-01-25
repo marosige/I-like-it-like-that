@@ -10,7 +10,7 @@ defaults write com.apple.screensaver askForPassword -bool true || exit=1
 defaults write com.apple.screensaver askForPasswordDelay -int 0 || exit=1
 
 # Disable automatic login
-sudo defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser &> /dev/null || exit=1
+#sudo defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser || exit=1
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false || exit=1

@@ -22,13 +22,13 @@ references.txt
 
 =============
 
-move chrome apps sh to a readme of what to do if ignition is ready
-
-=============
-
 preferences adja be a listaba mit kell ujrainditani
 
 =======
+
+auto start: amphetamine, clippy
+
+====
 
 set_fish_shell alapjan visszajelzes - https://github.com/edheltzel/dotfiles/blob/master/fish/setup.sh
 Check all system settings if I miss anything
@@ -42,32 +42,4 @@ turn off click on display to show it
 set screen mirroring visible always on menu bar
 set display resolution to more space
 
-set the same:
-  #!/bin/bash
-  #!/usr/bin/env zsh
-  #!/usr/bin/env fish
-  #!/bin/bash
-to every script.
-
-Not important todo:
-
-fish -
-  beallitani a szineket hogy ugy legyen hasznalva mint a kitty theme-ben https://github.com/edheltzel/dotfiles/blob/master/fish/conf.d/colors.fish
-  functions legyen nekem is
-    amiket osszeszedtem eddig
-      beallitani egyeb aliases-t (bin folderre)
-
-terminal -
-  Terminal Default window size set columns: 197 lines: 60
-    defaults read com.apple.terminal "Window Settings"
-      "Window Settings" =     {
-          Basic =         {
-              Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
-              FontAntialias = 1;
-              FontWidthSpacing = "1.004032258064516";
-              ProfileCurrentVersion = "2.07";
-              columnCount = 197;
-              name = Basic;
-              rowCount = 60;
-              type = "Window Settings";
-          };
+remove magnifing glass from menu bar Spotlight Search

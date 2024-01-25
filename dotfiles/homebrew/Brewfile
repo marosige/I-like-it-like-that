@@ -87,8 +87,9 @@ cask "logi-options-plus"  # Software for Logitech devices
 cask "appcleaner" # Application uninstaller
 cask "ukelele"    # Unicode keyboard layout editor
 cask "coconutbattery" # Tool to show live information about the batteries in various devices
-mas "Magnet", id: 441258766 # Window manager for Mac
-mas "Amphetamine", id: 937984704 # Keep-awake utility for macOS
+cask "clipy"      # Clipboard extension app
+mas "Magnet", id: 441258766       # Window manager for Mac
+mas "Amphetamine", id: 937984704  # Keep-awake utility for macOS
 
 # Gaming
 #cask "steam"      # Video game digital distribution service
