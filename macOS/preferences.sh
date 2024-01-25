@@ -2,6 +2,8 @@
 
 source ./print.sh
 
+title "Setting my preferred system configuration:"
+
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then
   echo "This script is only available for macOS! Exiting..."
@@ -17,8 +19,6 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-title "Setting my preferred system configuration:"
 
 # Get an empty log file
 log_file="ignition.preferences.log"

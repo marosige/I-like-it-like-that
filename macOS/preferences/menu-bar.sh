@@ -14,7 +14,7 @@ defaults write com.apple.controlcenter Bluetooth -int 18 || exit=1
 # Show volume icon
 defaults write com.apple.controlcenter Sound -int 18 || exit=1
 
-# Hide text input menu
-defaults write com.apple.TextInputMenu visible -bool false || exit=1
+# Show text input menu
+defaults write com.apple.TextInputMenu visible -bool true || exit=1
 
 exit $exit

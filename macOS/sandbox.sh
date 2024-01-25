@@ -6,6 +6,7 @@ source ./print.sh
 message "Message"
 title "Title"
 warn "Warn"
+info "Info"
 question "Question"
 task "Task"; printf "\n"
 success "Success"
