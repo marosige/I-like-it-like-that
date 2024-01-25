@@ -26,6 +26,10 @@ move chrome apps sh to a readme of what to do if ignition is ready
 
 =============
 
+preferences adja be a listaba mit kell ujrainditani
+
+=======
+
 set_fish_shell alapjan visszajelzes - https://github.com/edheltzel/dotfiles/blob/master/fish/setup.sh
 Check all system settings if I miss anything
 automatically opened applications set

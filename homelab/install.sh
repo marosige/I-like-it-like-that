@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 check_superuser() {
   if ((EUID != 0)); then

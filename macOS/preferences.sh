@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source ./print.sh
 
@@ -18,13 +18,46 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Run all the preferences files
+title "Setting my preferred system configuration:"
 
-for f in preferences/*.sh; do
-  file_name=$(basename $f .sh)
+# Get an empty log file
+log_file="ignition.log"
+rm "$log_file"
+
+error=false
+
+# Run all the preferences files
+for script in preferences/*.sh; do
+  # Get the name of the preference script
+  file_name=$(basename $script .sh)
   name=${file_name//-/ }  # replace '-' with ' '
+
+  # Message describing the current script
   message="Setting $name preferences"
+
+  # Print a task message with it
   task $message
-  #sleep 3 && success $message || fail $message;
-  bash "$f" && success $message || fail $message;
+
+  # Run the preference script, redirecting standard output and error
+  # Change the task message to success or fail
+  if output=$(bash $script 2>&1); then
+    success $message
+    echo "$message:" >> $log_file
+  else
+    error=true
+    fail $message
+    echo "!! ERROR $message !!" >> $log_file
+  fi
+
+  # Add the script output to the log
+  echo "$output" >> $log_file
+
 done
+
+# Let the user know where to find the log if there was an error
+if $error; then
+  # Use readlink to get the full path
+  full_path=$(readlink -f "$log_file")
+  # Print the clickable full path
+  warn "Check log for error messages: file://$full_path"
+fi

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script will:
 # * install Homebrew - https://brew.sh/

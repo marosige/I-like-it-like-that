@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then
@@ -19,7 +19,6 @@ INSTALLERS=(
   directory-structure # directory_structure __must__ be first
   dotfiles # Dotfiles __must__ be installed before Homebrew
   homebrew # Homebrew __must__ be installed before other tools
-  chrome-apps
 )
 
 # Sources all the preference files
