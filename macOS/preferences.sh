@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cd $IGNITION_MAC
 source ./print.sh
 
 title "Setting my preferred system configuration:"
@@ -7,7 +8,7 @@ title "Setting my preferred system configuration:"
 # If not on macOS, exit.
 if [ "$(uname -s)" != "Darwin" ]; then
   echo "This script is only available for macOS! Exiting..."
-	exit 0
+	exit 1
 fi
 
 # Close any open System Settings panes, to prevent them from overriding
@@ -21,8 +22,8 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Get an empty log file
-log_file="ignition.preferences.log"
-rm "$log_file"
+log_file="$IGNITION_ROOT/ignition.preferences.log"
+rm "$log_file" &> /dev/null
 
 error=false
 

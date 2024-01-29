@@ -24,3 +24,6 @@ thefuck --alias | source
 
 # Add my bin folder to the PATH
 set PATH ~/.ignition/macOS/bin $PATH
+
+# Source enviromental variables
+source ~/.env.sh

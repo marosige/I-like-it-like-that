@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+cd $IGNITION_MAC/installers
+#source ../print.sh
 
 ###############################################################################
 # Dotfiles

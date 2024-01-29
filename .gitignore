@@ -1,0 +1,7 @@
+# Ignore Ignition log files
+ignition.installers.log
+ignition.preferences.log
+ignition.bootstrap.log
+
+# Ignore ignition softlink to bin
+macOS/bin/ignition
