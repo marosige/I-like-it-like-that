@@ -82,3 +82,12 @@ csinalni egy bin foldert root levelen azt is bevenni a checkoutba.
 abba legyen sim linkelne az ignition
 abba legyen a weather meg minden nem macos related script
 es ez a bin legyen hozza linkelve a ~/bin-hez, ami pedig PATH
+
+===
+
+auto start:
+• nord layer
+• Clippy
+• Magnet
+• 1Password
+• spotmenu

@@ -37,7 +37,7 @@ bold () {
 }
 
 list () {
-  printf "\r${DEFAULT}> %s\n" "$*"
+  printf "\r${DEFAULT}>  %s\n" "$*"
 }
 
 number () {

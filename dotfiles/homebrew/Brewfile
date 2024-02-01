@@ -20,6 +20,7 @@ brew "gum"        # Tool for glamorous shell scripts
 brew "dialog"     # Display user-friendly message boxes from shell scripts
 brew "btop"       # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "neofetch"   # Fast, highly customisable system info script
+brew "tty-clock"  # Digital clock in ncurses
 brew "cmatrix"    # Console Matrix
 
 # Development tools
@@ -92,7 +93,8 @@ mas "Magnet", id: 441258766       # Window manager for Mac
 mas "Amphetamine", id: 937984704  # Keep-awake utility for macOS
 
 # Gaming
-#cask "steam"      # Video game digital distribution service
+cask "whisky"     # Wine wrapper built with SwiftUI
+cask "steam"      # Video game digital distribution service
 #cask "battle-net" # Blizzard Battle.net online gaming platform
 #cask "epic-games" # Launcher for *Epic Games* games
 #cask "origin"     # Play PC games and connect with your friends

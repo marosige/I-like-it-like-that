@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+###############################################################################
+# Check the weather
+###############################################################################
+
+# tty-clock
+# -c    Set the clock at the center of the terminal
+# -s    Show seconds
+# -C 2  Set the clock color to green
+tty-clock -c -s -C 2
