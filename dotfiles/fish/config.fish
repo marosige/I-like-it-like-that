@@ -1,5 +1,6 @@
-# When I use Kitty, I disable the onedark fish theme, cause it overwrites the onedark Kitty theme.
-set onedark false
+# To use the onedark Kitty theme, disable the onedark fish theme.
+# It overwrites the onedark Kitty theme.
+set onedark true
 
 if status is-interactive
   if $onedark
